@@ -1,4 +1,4 @@
-const _ = require("underscore")
+const _ = require("underscore");
 
 const isPrime = (num) => {
   let response = true;
@@ -8,59 +8,59 @@ const isPrime = (num) => {
   for (let i = 2, s = Math.floor(Math.sqrt(num)); i <= s; i++)
     if (num % i === 0) {
       response = false;
+      break;
     }
   return response;
 };
 
-const isPandigital = (num) =>{
-  let numLength = num.toString().split("").length
+const isPandigital = (num) => {
+  let numLength = num.toString().split("").length;
+  let numArr = num.toString().split("").map(Number);
 
-  // console.log(numLength)
-  let pandigital = false
+  let pandigital = false;
   let contain = 0;
-  let digits = _.range(1, numLength+1)
+  let digits = _.range(1, numLength + 1);
+  let done = [];
 
-  for(let x = 0; x < numLength+1; x++){
-    // console.log(digits[x])
-    // console.log("x: ", x, "digits[x]: ", digits[x])
-    if(digits.includes(x)){
-      contain++
+  for (let x = 0; x <= digits.length; x++) {
+    if (digits.includes(numArr[x]) && !done.includes(numArr[x])) {
+      done.push(numArr[x]);
+      contain++;
     }
   }
-  // console.log(contain)
-  if(contain === numLength){
-    
-    pandigital = true
+
+  if (contain === numLength) {
+    pandigital = true;
   }
 
-  return pandigital 
-}
+  return pandigital;
+};
 
-const checkPandigital = () =>{
-
+const checkPandigital = () => {
   let listOfPandigitalPrimes = [];
 
-  let digits = _.range(1, 11)
+  let digits = _.range(1, 11);
 
-  let fullPandigital = false
+  let fullPandigital = false;
   let number = 9;
-  while(fullPandigital === false){
-    if(isPrime(number)){
-      if(isPandigital(number)){
-        listOfPandigitalPrimes.push(number)
-        // console.log(number)
-        if(number.toString().split("").length === 11){
-          fullPandigital = true
-          console.log('done')
-        }
+  while (fullPandigital === false) {
+    if (isPrime(number)) {
+      if (number.toString().split("").length > 11) {
+        fullPandigital = true;
+        console.log("done");
+      }
+      if (isPandigital(number)) {
+        listOfPandigitalPrimes.push(number);
+        console.log(number);
       }
     }
-    number++
+    number++;
   }
-  console.log(listOfPandigitalPrimes)
-  return listOfPandigitalPrimes
-}
+  let sortedPandigitalList = Float64Array(listOfPandigitalPrimes);
 
-console.log(checkPandigital())
+  sortedPandigitalList = sortedPandigitalList.sort();
+  console.log(sortedPandigitalList.reverse());
+  return listOfPandigitalPrimes;
+};
 
-// isPandigital(5432167980)
+console.log(checkPandigital());
