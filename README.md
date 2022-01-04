@@ -1,2 +1,2 @@
 # ProjectEuler
-Project Euler Solutions!
+A compilation of project Euler Solutions!
