@@ -6,7 +6,7 @@ for num in range(3, 1000001, 2):
     if all(num % i != 0 for i in range(2, int(math.sqrt(num)) + 1)):
         d.append(num)
 
-count = 0
+count = 1
 
 for val in d:
     val_listed = [int(x) for x in str(val)]
@@ -19,6 +19,8 @@ for val in d:
             full_rotation -= 1
             if full_rotation == 0:
                 count += 1
+
         else:
             continue
-print(count) #55
+print(count)
+#55
