@@ -15,6 +15,6 @@ function factorsOf(n) {
     return factors[factors.length-1];
   }
 
-console.log(factorsOf(600851475143))
+console.log(factorsOf(600851475143)) // 6857
 
 
