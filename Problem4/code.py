@@ -8,11 +8,11 @@ def check_palindrome(num):
 
     middle_index = num_length // 2
 
-    first_half = num_list[:middle_index]
+    # first_half = num_list[:middle_index]
 
-    reversed_second_half = list(reversed(num_list[middle_index:]))
+    # reversed_second_half = list(reversed(num_list[middle_index:]))
 
-    if ''.join(first_half) == ''.join(reversed_second_half):
+    if ''.join(num_list[:middle_index]) == ''.join(list(reversed(num_list[middle_index:]))):
         return True
     else:
         return False
