@@ -1,4 +1,4 @@
-number_range = range(1, 21, 1)
+number_range = range(1, 11, 1)
 
 number_list = list(number_range)
 
