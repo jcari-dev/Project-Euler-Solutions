@@ -40,12 +40,4 @@ for (let x = 0; x < series.length; x++) {
 
 }
 
-// let sortedList = new Float64Array(listOfSum)
-
-// sortedList = sortedList.sort()
-// sortedList = sortedList.reverse()
-
-// console.log(sortedList)
-console.log(greatest)
-
-// Answer 23514624000
+console.log(greatest) // 23514624000
