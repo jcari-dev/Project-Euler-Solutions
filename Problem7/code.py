@@ -1,19 +1,11 @@
 import math
 
 def isPrime(num):
-    if num % 2 == 0:
-        return False
-    if num > 1:
-        
-        num_sqrt = int(math.ceil(math.sqrt(num)))
-        
-        for i in range(2, num_sqrt):
-            if (num % i) == 0:
-                response = False
-                break
-        else:
-            response = True
-        return response
+    if num < 2: return False
+    for i in range(2, int(np.sqrt(num)) + 1):
+        if num % i == 0:
+            return False
+    return True
             
 
 def give_me_prime_n(nth):
@@ -28,4 +20,4 @@ def give_me_prime_n(nth):
             
     print(prime_list[-1])
 
-give_me_prime_n(10001) #104743
+give_me_prime_n(10000) #104743
