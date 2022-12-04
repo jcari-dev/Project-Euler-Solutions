@@ -1,7 +1,8 @@
 
 
 def sumDigits(number):
-    """ Returns the squared sum of the digits of the provided number."""
+    """ Returns True if the squared sum of the digits in the squared chain of the provided number ends 
+    in 89."""
     chainSum = 0
 
     for digit in str(number):
