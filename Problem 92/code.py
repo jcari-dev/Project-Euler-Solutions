@@ -1,5 +1,3 @@
-
-
 def sumDigits(number):
     """ Returns True if the squared sum of the digits in the squared chain of the provided number ends 
     in 89."""
